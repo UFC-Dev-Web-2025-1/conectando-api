@@ -1,6 +1,6 @@
-# 🚀 Conectando APIs: Desenvolvimento Web com React
+# 🚀 Repositório de Apoio: Desenvolvimento Web com React
 
-Este repositório foi criado para auxiliar no **Desenvolvimento Web**, abordando conceitos e práticas essenciais para a integração com APIs RESTful utilizando a extensão **Postman no VSCode**. Aqui, você encontra um guia detalhado para configurar, testar e automatizar chamadas às APIs diretamente no seu editor de código favorito.
+Este repositório foi criado para auxiliar estudantes da disciplina **Desenvolvimento Web com React**, abordando conceitos e práticas essenciais para a integração com APIs RESTful utilizando a extensão **Postman no VSCode**. Aqui, você encontra um guia detalhado para configurar, testar e automatizar chamadas às APIs diretamente no seu editor de código favorito.
 
 ---
 
@@ -101,6 +101,52 @@ Utilize o painel de **logs** do Postman no VSCode:
 
 - Verifique requisições e respostas detalhadas.
 - Depure erros diretamente no ambiente de desenvolvimento.
+
+---
+
+## 🌐 Acessando Ferramentas de Fake API
+
+Para praticar com APIs mesmo sem um backend real, você pode utilizar ferramentas de Fake API:
+
+- **[JSONPlaceholder](https://jsonplaceholder.typicode.com/)**:
+  Uma Fake API gratuita que fornece endpoints para testes de CRUD com dados fictícios.
+
+- **[Mocky](https://designer.mocky.io/)**:
+  Crie suas próprias respostas simuladas, com controle sobre o conteúdo retornado e o status HTTP. 
+  
+  ### Como usar o Mocky:
+  1. Acesse o [Mocky Designer](https://designer.mocky.io/).
+  2. Crie uma nova resposta personalizada:
+      - Escolha o **status HTTP** (ex.: 200, 404, 500).
+      - Defina o conteúdo do **body** (em JSON, XML, etc.).
+      - Configure os **headers**, se necessário.
+  3. Clique em **Save** para gerar um link único.
+  4. Use o link gerado como endpoint em seus testes com o Postman ou diretamente em projetos React.
+
+  ### Exemplos de uso no projeto:
+  - Simulação de respostas para CRUD:
+    ```json
+    {
+      "id": 1,
+      "nome": "Lana Mesquita",
+      "curso": "Desenvolvimento Web"
+    }
+    ```
+  - Teste de falhas controladas:
+    - Status `500` com mensagem personalizada:
+      ```json
+      {
+        "erro": "Erro interno no servidor"
+      }
+      ```
+
+- **[Reqres](https://reqres.in/)**:
+  API para testar requisições de autenticação e operações CRUD.
+
+- **[Postman Mock Server](https://www.postman.com/mock-server/)**:
+  Integração nativa do Postman para criar APIs simuladas diretamente na plataforma.
+
+Ao usar essas ferramentas, você pode testar requisições e validar respostas sem depender de uma API em produção ou em desenvolvimento.
 
 ---
 
