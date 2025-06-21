@@ -8,21 +8,24 @@ Este repositório foi criado para abordar conceitos e práticas essenciais de in
 - [📖 História das APIs](#-história-das-apis)
 - [🎯 Para que serve uma API?](#-para-que-serve-uma-api)
   - [Por que usar API?](#por-que-usar-api)
-  - [Quais são as vantagens de usar uma API?](#quais-são-as-vantagens-de-usar-uma-api)
-- [🌐 APIs baseadas em Web](#-apis-baseadas-em-web)
+    - [Quais são as vantagens de usar uma API?](#quais-são-as-vantagens-de-usar-uma-api)
 - [🌍 APIs Web](#-apis-web)
-- [🧩 API SOAP (Simple Object Access Protocol)](#api-soap-simple-object-access-protocol)
-- [🌀 APIs REST (Representational State Transfer)](#apis-rest-representational-state-transfer)
+  - [API SOAP (Simple Object Access Protocol)](#api-soap-simple-object-access-protocol)
+  - [APIs REST (Representational State Transfer)](#apis-rest-representational-state-transfer)
   - [Diferenças entre API REST e API SOAP](#diferenças-entre-api-rest-e-api-soap)
-- [🔤 Métodos HTTP e Identificação dos Recursos](#-métodos-http-e-identificação-dos-recursos)
-  - [Exemplo para o recurso Cliente](#exemplo-para-o-recurso-cliente)
+- [🔤 HTTP](#-http)
+  - [Métodos HTTP Usados no REST](#métodos-http-usados-no-rest)
+  - [Identificação dos Recursos](#identificação-dos-recursos)
+    - [Exemplo para o recurso Cliente](#exemplo-para-o-recurso-cliente)
   - [Códigos de Resposta HTTP](#códigos-de-resposta-http)
-- [🛠️ Como Configurar a Extensão Postman no VSCode](#️-como-configurar-a-extensão-postman-no-vscode)
-- [⚙️ Configurar o Ambiente](#️-configurar-o-ambiente)
-- [📡 Criar e Executar Requisições](#-criar-e-executar-requisições)
-- [🔎 Analisar Respostas](#-analisar-respostas)
-- [✅ Testar com Scripts](#-testar-com-scripts)
+- [🛠️ Postman no VSCode](#-postman-no-vscode)
+  - [Alternativas ao Postman](#alternativas-ao-postman)
+  - [Instalar a Extensão Postman](#instalar-a-extensão-postman)
+  - [Criar e Executar Requisições](#criar-e-executar-requisições)
+  - [Analisar Respostas](#analisar-respostas)
 - [🌐 Acessando Ferramentas de Fake API](#-acessando-ferramentas-de-fake-api)
+  - [Como usar o Mocky](#como-usar-o-mocky)
+  - [Exemplos de uso no projeto](#exemplos-de-uso-no-projeto)
 - [🔗 Links Úteis](#-links-úteis)
 - [📚 Referências](#-referências)
 <!-- tocstop -->
@@ -179,11 +182,11 @@ As APIs REST podem ser desenvolvidas utilizando uma grande quantidade de linguag
 
 API REST e API SOAP são duas formas para a transmissão de dados e para manter a interoperabilidade entre sistemas. Veja as principais diferenças:
 
-- **SOAP é um protocolo, enquanto o REST é um padrão de arquitetura;**
-- **SOAP é independente de linguagem, transporte e até plataforma, enquanto o REST requer o uso do protocolo HTTP;**
-- **SOAP é uma abordagem muito presente ainda em sistemas legados, enquanto REST surgiu posteriormente e costuma ser vista como uma solução mais eficiente em questão de performance nos casos baseados em web;**
-- **Para contextos mais leves como IoT (Internet das coisas), desenvolvimento de aplicações serverless e mobile é recomendado o REST, para sistemas que requerem mais segurança e muitas necessidades empresariais é recomendado o SOAP;**
-- **O formato dos dados do SOAP é somente por meio de XML, enquanto o REST oferece suporte a XML, JSON, HTML e texto simples.**
+- SOAP é um protocolo, enquanto o REST é um padrão de arquitetura;
+- SOAP é independente de linguagem, transporte e até plataforma, enquanto o REST requer o uso do protocolo HTTP;
+- SOAP é uma abordagem muito presente ainda em sistemas legados, enquanto REST surgiu posteriormente e costuma ser vista como uma solução mais eficiente em questão de performance nos casos baseados em web;
+- Para contextos mais leves como IoT (Internet das coisas), desenvolvimento de aplicações serverless e mobile é recomendado o REST, para sistemas que requerem mais segurança e muitas necessidades empresariais é recomendado o SOAP;
+- O formato dos dados do SOAP é somente por meio de XML, enquanto o REST oferece suporte a XML, JSON, HTML e texto simples.
 
 ---
 
@@ -257,34 +260,21 @@ Evite utilizar apenas o método POST para todas as operações que alteram o est
 | 502    | Bad Gateway            | Gateway ou proxy recebeu resposta inválida do servidor upstream.           |
 | 503    | Service Unavailable    | Serviço indisponível, geralmente por manutenção ou sobrecarga.
 
-## 🛠️ Como Configurar a Extensão Postman no VSCode
+## 🛠️ Postman no VSCode
+O **Postman** é uma ferramenta popular para desenvolvimento, teste e documentação de APIs, oferecendo interface intuitiva, automação de testes e integração com o VSCode.
 
-### **1. Instalar a Extensão Postman**
-- **Instale no VSCode**:
-  - Acesse o **Marketplace de Extensões** no VSCode.
-  - Pesquise por **Postman** e clique em **Install**.
-- **Configuração inicial**:
-  - Após instalar, abra a extensão e faça login na sua conta Postman ou crie uma.
+**Alternativas ao Postman:**
+- **[Insomnia](https://insomnia.rest/):** Simples, rápido, com suporte a REST, GraphQL e gRPC, além de integração com fluxos DevOps.
+- **[UseBruno](https://www.usebruno.com/):** Open source, leve, orientado a arquivos, facilita versionamento e não exige cadastro.
 
----
+Cada ferramenta tem vantagens específicas para diferentes necessidades de desenvolvimento. Vamos seguir com as instruções do Postman com uso no VSCode (ou CodeSpace).
 
-## ⚙️ Configurar o Ambiente
-Antes de começar os testes:
+### Instalar a Extensão Postman
+- **Instale a extensão Postman no VSCode**:
+  - No Marketplace, busque por **Postman** e clique em **Install**.
+  - Abra a extensão e faça login ou crie uma conta.
 
-- **Crie um ambiente no Postman**:
-  - Clique em **Environments** na barra lateral do Postman.
-  - Adicione variáveis, como URLs base ou tokens de autenticação:
-    ```json
-    {
-      "base_url": "https://api.example.com",
-      "token": "seu_token_aqui"
-    }
-    ```
-  - Essas variáveis podem ser usadas nas requisições, tornando-as dinâmicas.
-
----
-
-## 📡 Criar e Executar Requisições
+### Criar e Executar Requisições
 
 ### **1. Acessar a extensão**:
    - Na barra lateral, clique no ícone do **Postman**.
@@ -316,38 +306,12 @@ Antes de começar os testes:
 ### **3. Executar a requisição**:
    - Clique no botão **Send** para enviar a requisição e veja a resposta no painel.
 
----
-
-## 🔎 Analisar Respostas
+### Analisar Respostas
 A extensão exibe:
 
 - **Status HTTP**: (ex.: `200 OK`, `404 Not Found`).
 - **Headers de resposta**: Mostra metadados, como tipo de conteúdo.
 - **Body**: O corpo da resposta em JSON, texto ou outro formato.
-
----
-
-## ✅ Testar com Scripts
-
-Adicione scripts para validar respostas automaticamente:
-
-- **Script de pré-requisição**: Executado antes do envio.
-- **Script de teste**: Validar a resposta.
-  ```javascript
-  pm.test("Status code is 200", function () {
-    pm.response.to.have.status(200);
-  });
-
-  pm.test("Response time is below 500ms", function () {
-    pm.expect(pm.response.responseTime).to.be.below(500);
-  });
-
-  pm.test("Body contains campo1", function () {
-    pm.expect(pm.response.json()).to.have.property("campo1");
-  });
-  ```
-
----
 
 ## 🌐 Acessando Ferramentas de Fake API
 
