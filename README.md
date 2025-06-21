@@ -324,6 +324,8 @@ Para praticar com APIs mesmo sem um backend real, você pode utilizar ferramenta
     ```
     Após criar o projeto, a plataforma será aberta no seu navegador e você poderá criar estruturas de dados para seu backend.
 
+    As rotas são definidas a partir dos seus dados: [https://docs.strapi.io/cms/api/rest#endpoints](https://docs.strapi.io/cms/api/rest#endpoints)
+
 Ao usar essas ferramentas, você pode testar requisições e validar respostas sem depender de uma API em produção ou em desenvolvimento.
 
 - **[Mocky](https://designer.mocky.io/)**:
