@@ -328,35 +328,6 @@ Para praticar com APIs mesmo sem um backend real, você pode utilizar ferramenta
 
 Ao usar essas ferramentas, você pode testar requisições e validar respostas sem depender de uma API em produção ou em desenvolvimento.
 
-- **[Mocky](https://designer.mocky.io/)**:
-  Crie suas próprias respostas simuladas, com controle sobre o conteúdo retornado e o status HTTP. 
-  
-  ### Como usar o Mocky:
-  1. Acesse o [Mocky Designer](https://designer.mocky.io/).
-  2. Crie uma nova resposta personalizada:
-      - Escolha o **status HTTP** (ex.: 200, 404, 500).
-      - Defina o conteúdo do **body** (em JSON, XML, etc.).
-      - Configure os **headers**, se necessário.
-  3. Clique em **Save** para gerar um link único.
-  4. Use o link gerado como endpoint em seus testes com o Postman ou diretamente em projetos React.
-
-  ### Exemplos de uso no projeto:
-  - Simulação de respostas para CRUD:
-    ```json
-    {
-      "id": 1,
-      "nome": "Lana Mesquita",
-      "curso": "Desenvolvimento Web"
-    }
-    ```
-  - Teste de falhas controladas:
-    - Status `500` com mensagem personalizada:
-      ```json
-      {
-        "erro": "Erro interno no servidor"
-      }
-      ```
-
 - **[JSONPlaceholder](https://jsonplaceholder.typicode.com/)**:
   Uma Fake API gratuita que fornece endpoints para testes de CRUD com dados fictícios.
 
