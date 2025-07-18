@@ -96,7 +96,6 @@ Os protocolos HTTP e HTTPS estabelecem uma padronização para as mensagens de r
 
 ```json
 {
-  "lista_pessoas": {
     "pessoas": [
       {
         "nome": "João Silva",
@@ -114,30 +113,29 @@ Os protocolos HTTP e HTTPS estabelecem uma padronização para as mensagens de r
         "idade": "18"
       }
     ]
-  }
 }
 ```
 
 **Estrutura de mensagens formatadas em XML:**
 
 ```xml
-<lista_pessoas>
-  <pessoas>
+<pessoas>
+  <pessoa>
     <nome>João Silva</nome>
     <sexo>M</sexo>
     <idade>22</idade>
-  </pessoas>
-  <pessoas>
+  </pessoa>
+  <pessoa>
     <nome>Maria Eduarda</nome>
     <sexo>F</sexo>
     <idade>21</idade>
-  </pessoas>
-  <pessoas>
+  </pessoa>
+  <pessoa>
     <nome>Pedro Gomes</nome>
     <sexo>M</sexo>
     <idade>18</idade>
-  </pessoas>
-</lista_pessoas>
+  </pessoa>
+</pessoas>
 ```
 
 Podemos observar que o formato XML utiliza tags para envolver os dados, tornando-o mais verboso e, por vezes, complexo. Em contrapartida, o JSON é mais conciso, utiliza uma sintaxe baseada em pares chave-valor e é facilmente legível tanto para humanos quanto para máquinas.
